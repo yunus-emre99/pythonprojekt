@@ -111,7 +111,7 @@ def pwEingabeBeiProgrammStart(decryptetPW):
             print("programm geschlossen, zu lange untätig")
             return
 
-
+#In Datei "versucheBleibend.txt" werden Restversuche gespeichert und abgelegt.
 def pruefeAnzahlVersucheMasterPassW():
     try:
         with open('versucheBleibend.txt', 'r') as file:
@@ -131,6 +131,7 @@ def menuFuerPwOptionen():
                                 "Falls sie das programm beenden wollen, drücken sie die 3\n"
                                 )
 
+    # Option 1 noch nicht gemacht. 
     if(optionen=='2'):
         fileKey = r"C:\Users\Arvand\PycharmProjects\Uni1\tester\key.txt"
         filePassW=r"C:\Users\Arvand\PycharmProjects\Uni1\tester\passwort.txt"
