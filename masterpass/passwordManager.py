@@ -5,6 +5,10 @@
 # # # (WICHTIG): Passwort wird in einer Textdatei abgelegt, beim starten des Programmes wird geschaut ob sich etwas in dieser Textdatei befindet
 # # # Passwort sollte verschlüsselt werden
 # # # sinnvolle Zeitspanne für erneute Abfrage vom Passwort
+<<<<<<< HEAD
+=======
+
+>>>>>>> 04915b2 (Initial commit)
 import os
 from datetime import datetime
 from datetime import timedelta
@@ -20,7 +24,11 @@ def ueberpruefeGleichheit(passwort):
     zeitPunktEndeMethode=datetime.now()
     zwischenZeit=timedelta.total_seconds(zeitPunktEndeMethode-zeitPunktAnfangMethode)
     if(zwischenZeit<300):
+<<<<<<< HEAD
 ## if anweisung überprüft, ob länger als 5 minuten nix eingegeben wurde
+=======
+#if anweisung überprüft, ob man länger als 5 minuten nichts eingibt
+>>>>>>> 04915b2 (Initial commit)
         if (passwort == pruefer):
             print("akzeptiert")
             passwortVerstauen(passwort)
@@ -52,7 +60,10 @@ def ueberpruefePasswortLaenge(passwort):
         passwort = maskpass.advpass("")
     return passwort
 
+<<<<<<< HEAD
 ### überpürft ob es bereits ein Passwort gibt(es wird geschaut nach "passwort.txt" und "key.txt)
+=======
+>>>>>>> 04915b2 (Initial commit)
 def pruefExistPassW():
     tester=False
     try:
@@ -66,8 +77,11 @@ def pruefExistPassW():
         pwEinlesenVonTextData()
     elif tester==False:
         passwortBestimmen()
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> 04915b2 (Initial commit)
 
 def pwEinlesenVonTextData():
     print("Es gibt bereits ein Passwort")
@@ -86,7 +100,11 @@ def pwEinlesenVonTextData():
         menuFuerPwOptionen()'''
     pwEingabeBeiProgrammStart(decryptetPW)
 
+<<<<<<< HEAD
 #hier wird die Eingabe vom Nutzer mit dem gespeichertem Passwort verglichen
+=======
+
+>>>>>>> 04915b2 (Initial commit)
 def pwEingabeBeiProgrammStart(decryptetPW):
     x = pruefeAnzahlVersucheMasterPassW()
     while x > 0:
@@ -111,7 +129,11 @@ def pwEingabeBeiProgrammStart(decryptetPW):
             print("programm geschlossen, zu lange untätig")
             return
 
+<<<<<<< HEAD
 #In Datei "versucheBleibend.txt" werden Restversuche gespeichert und abgelegt.
+=======
+
+>>>>>>> 04915b2 (Initial commit)
 def pruefeAnzahlVersucheMasterPassW():
     try:
         with open('versucheBleibend.txt', 'r') as file:
@@ -131,7 +153,10 @@ def menuFuerPwOptionen():
                                 "Falls sie das programm beenden wollen, drücken sie die 3\n"
                                 )
 
+<<<<<<< HEAD
     # Option 1 noch nicht gemacht. 
+=======
+>>>>>>> 04915b2 (Initial commit)
     if(optionen=='2'):
         fileKey = r"C:\Users\Arvand\PycharmProjects\Uni1\tester\key.txt"
         filePassW=r"C:\Users\Arvand\PycharmProjects\Uni1\tester\passwort.txt"
@@ -142,7 +167,11 @@ def menuFuerPwOptionen():
         print("Programm beendet")
         exit()
 
+<<<<<<< HEAD
 #hier wird die Datei "100k.txt" abgeglichen mit der Eingabe, falls fündig wird ein True zurückgegeben 
+=======
+
+>>>>>>> 04915b2 (Initial commit)
 def sicherheitsTest(passwort):
     fopen= open('100k.txt', 'r')
     fread= fopen.readlines()
@@ -159,8 +188,11 @@ def sicherheitsTest(passwort):
         pwTest=False
     return False
 
+<<<<<<< HEAD
 
 #hier werden mithilfe der  Datei "liste.txt" drei Vorschläge für den Nutzer gemacht für ein sicheres Passwort
+=======
+>>>>>>> 04915b2 (Initial commit)
 def satzZufälligGebildet():
     print("Geben sie hier ihr Passwort ein(länger als 7 Zeichen).\n"
           "WICHTIG! Schreiben sie für ein sicheres Passwort zunächst einmal einen unüblichen Satz auf ein Blatt Papier, wie Z.B:")
