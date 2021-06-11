@@ -20,7 +20,7 @@ def ueberpruefeGleichheit(passwort):
     zeitPunktEndeMethode=datetime.now()
     zwischenZeit=timedelta.total_seconds(zeitPunktEndeMethode-zeitPunktAnfangMethode)
     if(zwischenZeit<300):
-
+## if anweisung überprüft, ob länger als 5 minuten nix eingegeben wurde
         if (passwort == pruefer):
             print("akzeptiert")
             passwortVerstauen(passwort)
@@ -52,6 +52,7 @@ def ueberpruefePasswortLaenge(passwort):
         passwort = maskpass.advpass("")
     return passwort
 
+### überpürft ob es bereits ein Passwort gibt(es wird geschaut nach "passwort.txt" und "key.txt)
 def pruefExistPassW():
     tester=False
     try:
@@ -65,6 +66,8 @@ def pruefExistPassW():
         pwEinlesenVonTextData()
     elif tester==False:
         passwortBestimmen()
+        
+        
 
 def pwEinlesenVonTextData():
     print("Es gibt bereits ein Passwort")
@@ -83,7 +86,7 @@ def pwEinlesenVonTextData():
         menuFuerPwOptionen()'''
     pwEingabeBeiProgrammStart(decryptetPW)
 
-
+#hier wird die Eingabe vom Nutzer mit dem gespeichertem Passwort verglichen
 def pwEingabeBeiProgrammStart(decryptetPW):
     x = pruefeAnzahlVersucheMasterPassW()
     while x > 0:
@@ -138,7 +141,7 @@ def menuFuerPwOptionen():
         print("Programm beendet")
         exit()
 
-
+#hier wird die Datei "100k.txt" abgeglichen mit der Eingabe, falls fündig wird ein True zurückgegeben 
 def sicherheitsTest(passwort):
     fopen= open('100k.txt', 'r')
     fread= fopen.readlines()
@@ -155,6 +158,8 @@ def sicherheitsTest(passwort):
         pwTest=False
     return False
 
+
+#hier werden mithilfe der  Datei "liste.txt" drei Vorschläge für den Nutzer gemacht für ein sicheres Passwort
 def satzZufälligGebildet():
     print("Geben sie hier ihr Passwort ein(länger als 7 Zeichen).\n"
           "WICHTIG! Schreiben sie für ein sicheres Passwort zunächst einmal einen unüblichen Satz auf ein Blatt Papier, wie Z.B:")
